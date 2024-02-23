@@ -7,6 +7,7 @@ public class main {
         // LE SINGLETON VISE A RENVOYER TOUJOURS LA MÊME INSTANCE DE NOTRE OBJET POUR TOUTE L'APPLICATION
         //modification de ma variable  quantité dans la classe avec this.quantite
 
+        System.out.println("la voici une application directe de singleton");
         TomateSingleton tomata1 =  TomateSingleton.getInstance();
         System.out.println(tomata1.getQuantite());
         TomateSingleton tomata2 =  TomateSingleton.getInstance();
@@ -14,15 +15,6 @@ public class main {
         TomateSingleton tomata3 =  TomateSingleton.getInstance();
         System.out.println(tomata3.getQuantite());
         TomateSingleton tomate4 = TomateSingleton.getInstance();
-        System.out.println(tomate4);
-
-        /*
-            PROMPT ATTENDU
-            39
-            38
-            37
-            37
-            37
-         */
+        System.out.println(tomate4.getQuantite());
     }
 }

@@ -1,22 +1,32 @@
 package MVC.controller;
 
-import MVC.models.Employe;
-import MVC.view.EmployeView;
+import MVC.models.Employee;
+import MVC.view.EmployeeView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // CLASS CHARGER DE GERE TOUT CE QUI CONCERNE UN EMPLOYE
 public class EntrepriseController {
-    // LISTE EMPLOYER
-    // A COMPLETE
-    private EmployeView employeView;
 
-    // CORRIGER CONSTRUCTEUR
-    public EntrepriseController(EmployeView employeView){
-        this.employeView = employeView;
+    private List<Employee> listeEmployee;
+    private EmployeeView employeeView;
+
+    public EntrepriseController(EmployeeView employeeView) {
+        this.employeeView = employeeView;
+        this.listeEmployee = new ArrayList<>();
     }
 
     // A COMPLETE
-    public void embaucherEmployer(){}
+    public void embaucherEmployee(String nom, int age) {
+        Employee nouvelEmployee = new Employee(nom, age);
+        listeEmployee.add(nouvelEmployee);
+    }
 
     // A COMPLETE
-    public void presentationEmployer(){}
+    public void affichageEmployee() {
+        for (Employee employee : listeEmployee) {
+            employeeView.afficherEmploye(employee.getNom(), employee.getAge()); // Appel de la méthode afficherEmployee
+        }
+    }
 }
